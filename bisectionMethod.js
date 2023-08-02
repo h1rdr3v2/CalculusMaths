@@ -3,7 +3,7 @@ const math = new Mth(f)
 
 // Define the function for which you want to find the roots
 function f(x) {
-	return x ** 2 - 2 * x - 5
+	return x * Math.log10(x) - 1.2
 }
 
 // Bisection method to find the root within the specified range [a, b]
@@ -37,11 +37,11 @@ function bisectionMethod(a, b, precision) {
 	return table
 }
 const { a, b } = math.findInterval()
-const precision = 0.001 // Desired level of precision for convergence
+const precision = 0.0001 // Desired level of precision for convergence
 
 console.log(`\n\nThe root lies within the interval [${a}, ${b}]\n`)
 // Find the root
-const table = bisectionMethod(a, b, precision)
+const table = bisectionMethod(2, 3, precision)
 
 // Print the result table
 console.table(table)
